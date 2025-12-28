@@ -57,6 +57,7 @@ public class GraphQLClient {
             Class<T> responseClass) throws IOException {
 
         String graphQL = buildGraphQLDocument(request, projection);
+        System.out.println("graphQL: "+graphQL);
 
         Map<String, Object> payload = new HashMap<>();
         payload.put("query", graphQL);
