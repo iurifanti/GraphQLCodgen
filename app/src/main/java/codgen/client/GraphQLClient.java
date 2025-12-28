@@ -14,13 +14,13 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class ReusableGraphQLClient {
+public class GraphQLClient {
 
     private final String endpoint;
     private final String authorizationHeader; // "Basic ...." oppure null
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public ReusableGraphQLClient(String endpoint, String username, String password) {
+    public GraphQLClient(String endpoint, String username, String password) {
         this.endpoint = endpoint;
         this.authorizationHeader = (username != null && password != null)
                 ? buildBasicAuth(username, password)
@@ -28,7 +28,7 @@ public class ReusableGraphQLClient {
         SslBypass.disableSslVerificationIfNeeded();
     }
 
-    public ReusableGraphQLClient(String endpoint) {
+    public GraphQLClient(String endpoint) {
         this(endpoint, null, null);
     }
 
@@ -176,7 +176,7 @@ public class ReusableGraphQLClient {
         }
 
         if (v instanceof String) {
-            if (((String) v).contains("__")) {
+            if (((String) v).contains("___")) {
                 return (String) v;
             } else {
                 return quoteGraphQLString((String) v);

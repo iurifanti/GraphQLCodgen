@@ -6,15 +6,15 @@ package codgen.example;
 
 import codgen.client.GraphQLErrorDTO;
 import codgen.client.GraphQLRequestException;
-import codgen.client.ReusableGraphQLClient;
+import codgen.client.GraphQLClient;
 import icona.graphql.*;
 import java.util.Arrays;
 
-public class DemoPazienteGetPageJava8 {
+public class DemoPazienteGetPage {
 
     public static void main(String[] args) throws Exception {
 
-        ReusableGraphQLClient client = new ReusableGraphQLClient(
+        GraphQLClient client = new GraphQLClient(
                 "https://www.icona.org/iuri/ICONA_db/auth/api/graphql/ICONA",
                 "iuri",
                 "iurfan"
