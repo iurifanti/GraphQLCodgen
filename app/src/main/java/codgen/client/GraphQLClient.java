@@ -9,11 +9,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLOperationRequest;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequestSerializer;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLResponseProjection;
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -21,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -163,14 +168,68 @@ public class GraphQLClient {
         if (value == null) {
             return null;
         }
-        if (value instanceof Map || value instanceof Iterable || value.getClass().isArray()) {
-            return value;
-        }
-        // Garantisce che DTO generati vengano serializzati come mappe usando Jackson
         if (value instanceof String || value instanceof Number || value instanceof Boolean || value instanceof Enum<?>) {
             return value;
         }
-        return mapper.convertValue(value, Map.class);
+        if (value instanceof Map<?, ?>) {
+            return prepareMap((Map<?, ?>) value);
+        }
+        if (value instanceof Iterable<?>) {
+            return prepareIterable((Iterable<?>) value);
+        }
+        if (value.getClass().isArray()) {
+            return prepareArray(value);
+        }
+
+        return prepareBean(value);
+    }
+
+    private Object prepareArray(Object array) {
+        int length = java.lang.reflect.Array.getLength(array);
+        List<Object> converted = new ArrayList<>(length);
+        for (int i = 0; i < length; i++) {
+            Object element = java.lang.reflect.Array.get(array, i);
+            converted.add(prepareValue(element));
+        }
+        return converted;
+    }
+
+    private Iterable<Object> prepareIterable(Iterable<?> iterable) {
+        List<Object> converted = new ArrayList<>();
+        for (Object element : iterable) {
+            converted.add(prepareValue(element));
+        }
+        return converted;
+    }
+
+    private Map<String, Object> prepareMap(Map<?, ?> map) {
+        Map<String, Object> converted = new LinkedHashMap<>();
+        for (Map.Entry<?, ?> entry : map.entrySet()) {
+            String key = String.valueOf(entry.getKey());
+            converted.put(key, prepareValue(entry.getValue()));
+        }
+        return converted;
+    }
+
+    private Map<String, Object> prepareBean(Object bean) {
+        try {
+            BeanInfo beanInfo = Introspector.getBeanInfo(bean.getClass(), Object.class);
+            Map<String, Object> result = new LinkedHashMap<>();
+            for (PropertyDescriptor descriptor : beanInfo.getPropertyDescriptors()) {
+                Method getter = descriptor.getReadMethod();
+                if (getter == null) {
+                    continue;
+                }
+                if (!getter.canAccess(bean)) {
+                    getter.setAccessible(true);
+                }
+                Object propertyValue = getter.invoke(bean);
+                result.put(descriptor.getName(), prepareValue(propertyValue));
+            }
+            return result;
+        } catch (Exception e) {
+            throw new IllegalStateException("Unable to serialize bean: " + bean.getClass().getName(), e);
+        }
     }
 
     private String normalizeProjection(GraphQLResponseProjection projection) {
