@@ -8,6 +8,7 @@ import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLResponseProjection;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -43,6 +44,37 @@ class GraphQLClientTest {
         String document = (String) method.invoke(client, request, projection);
 
         assertEquals("query { dummyOperation(options:{orderBy:[ID_ASC]}) { __typename } }", document);
+    }
+
+    @Test
+    void nullValuesAreRemovedFromSerializedRequest() throws Exception {
+        GraphQLClient client = new GraphQLClient("http://localhost/graphql");
+
+        Map<String, Object> input = new LinkedHashMap<>();
+        input.put("id", null);
+        input.put("name", "John");
+
+        GraphQLOperationRequest request = new DummyOperationRequest(input);
+        GraphQLResponseProjection projection = new GraphQLResponseProjection() {
+            @Override
+            public GraphQLResponseProjection deepCopy$() {
+                return this;
+            }
+
+            @Override
+            public String toString() {
+                return "{ __typename }";
+            }
+        };
+
+        Method method = GraphQLClient.class.getDeclaredMethod("buildGraphQLDocument",
+                GraphQLOperationRequest.class,
+                GraphQLResponseProjection.class);
+        method.setAccessible(true);
+
+        String document = (String) method.invoke(client, request, projection);
+
+        assertEquals("query { dummyOperation(name:\"John\") { __typename } }", document);
     }
 
     private enum DummySort {
