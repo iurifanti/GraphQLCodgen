@@ -1,0 +1,44 @@
+package icona.graphql;
+
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLParametrizedInput;
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequestSerializer;
+import java.util.StringJoiner;
+
+/**
+ * Parametrized input for field range_BMI_ in type Settings_PRO
+ */
+@javax.annotation.processing.Generated(
+    value = "com.kobylynskyi.graphql.codegen.GraphQLCodegen",
+    date = "2025-12-28T01:33:43+0100"
+)
+public class Settings_PRORange_BMI_ParametrizedInput implements GraphQLParametrizedInput {
+
+    private CliRange_BMIPageOptionsDTO options;
+
+    public Settings_PRORange_BMI_ParametrizedInput() {
+    }
+
+
+    public Settings_PRORange_BMI_ParametrizedInput options(CliRange_BMIPageOptionsDTO options) {
+        this.options = options;
+        return this;
+    }
+
+    @Override
+    public Settings_PRORange_BMI_ParametrizedInput deepCopy() {
+        Settings_PRORange_BMI_ParametrizedInput parametrizedInput = new Settings_PRORange_BMI_ParametrizedInput();
+        parametrizedInput.options(this.options);
+        return parametrizedInput;
+    }
+
+
+    @Override
+    public String toString() {
+        StringJoiner joiner = new StringJoiner(", ", "(", ")");
+        if (options != null) {
+            joiner.add("options: " + GraphQLRequestSerializer.getEntry(options));
+        }
+        return joiner.toString();
+    }
+
+}
