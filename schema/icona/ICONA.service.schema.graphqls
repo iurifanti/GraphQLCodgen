@@ -1,0 +1,3482 @@
+
+schema {
+    
+    query: Query
+    
+    mutation: Mutation
+}
+
+"""
+Use a Query to fetch data.
+"""
+type Query {
+    
+    
+
+    """
+    Retrieve a single object of class Centro_provenienza by ID.
+    """
+    Centro_provenienza___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Centro_provenienza
+
+
+    """
+    Retrieve a single object of class Centro_provenienza by uniques.
+    """
+    Centro_provenienza___getByCod
+    (cod: Int!, insight: InsightType, disableCache: Boolean = false): Centro_provenienza
+
+
+    """
+    Retrieve a single object of class Centro_provenienza by uniques.
+    """
+    Centro_provenienza___getByNome
+    (nome: String!, insight: InsightType, disableCache: Boolean = false): Centro_provenienza
+
+        
+        
+    """
+    Retrieve a collection of object of class Centro_provenienza.
+    """
+    Centro_provenienza___getPage(
+        options : Centro_provenienzaPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Centro_provenienzaPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Checks by ID.
+    """
+    Checks___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Checks
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Checks.
+    """
+    Checks___getPage(
+        options : ChecksPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            ChecksPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Comorbidita_mpv by ID.
+    """
+    Comorbidita_mpv___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Comorbidita_mpv
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Comorbidita_mpv.
+    """
+    Comorbidita_mpv___getPage(
+        options : Comorbidita_mpvPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Comorbidita_mpvPage
+    
+
+    
+
+    """
+    Retrieve a single object of class ExcelImporter by ID.
+    """
+    ExcelImporter___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): ExcelImporter
+
+
+        
+        
+    """
+    Retrieve a collection of object of class ExcelImporter.
+    """
+    ExcelImporter___getPage(
+        options : ExcelImporterPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            ExcelImporterPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Feedback by ID.
+    """
+    Feedback___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Feedback
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Feedback.
+    """
+    Feedback___getPage(
+        options : FeedbackPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            FeedbackPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Gruppo by ID.
+    """
+    Gruppo___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Gruppo
+
+
+    """
+    Retrieve a single object of class Gruppo by uniques.
+    """
+    Gruppo___getByCod
+    (cod: Int!, insight: InsightType, disableCache: Boolean = false): Gruppo
+
+
+    """
+    Retrieve a single object of class Gruppo by uniques.
+    """
+    Gruppo___getByNome
+    (nome: String!, insight: InsightType, disableCache: Boolean = false): Gruppo
+
+        
+        
+    """
+    Retrieve a collection of object of class Gruppo.
+    """
+    Gruppo___getPage(
+        options : GruppoPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            GruppoPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Indicazioni_arruolamento_studi by ID.
+    """
+    Indicazioni_arruolamento_studi___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Indicazioni_arruolamento_studi
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Indicazioni_arruolamento_studi.
+    """
+    Indicazioni_arruolamento_studi___getPage(
+        options : Indicazioni_arruolamento_studiPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Indicazioni_arruolamento_studiPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Modalita_somministrazione by ID.
+    """
+    Modalita_somministrazione___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Modalita_somministrazione
+
+
+    """
+    Retrieve a single object of class Modalita_somministrazione by uniques.
+    """
+    Modalita_somministrazione___getByCod
+    (cod: Int!, insight: InsightType, disableCache: Boolean = false): Modalita_somministrazione
+
+
+    """
+    Retrieve a single object of class Modalita_somministrazione by uniques.
+    """
+    Modalita_somministrazione___getByNome
+    (nome: String!, insight: InsightType, disableCache: Boolean = false): Modalita_somministrazione
+
+        
+        
+    """
+    Retrieve a collection of object of class Modalita_somministrazione.
+    """
+    Modalita_somministrazione___getPage(
+        options : Modalita_somministrazionePageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Modalita_somministrazionePage
+    
+
+    
+
+    """
+    Retrieve a single object of class Paziente by ID.
+    """
+    Paziente___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Paziente
+
+
+    """
+    Retrieve a single object of class Paziente by uniques.
+    """
+    Paziente___getByCodice_interno
+    (codice_interno: String!, insight: InsightType, disableCache: Boolean = false): Paziente
+
+
+    """
+    Retrieve a single object of class Paziente by uniques.
+    """
+    Paziente___getById_paziente
+    (id_paziente: Int!, insight: InsightType, disableCache: Boolean = false): Paziente
+
+        
+        
+    """
+    Retrieve a collection of object of class Paziente.
+    """
+    Paziente___getPage(
+        options : PazientePageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            PazientePage
+    
+
+    
+
+    """
+    Retrieve a single object of class P_Paziente by ID.
+    """
+    P_Paziente___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): P_Paziente
+
+
+        
+        
+    """
+    Retrieve a collection of object of class P_Paziente.
+    """
+    P_Paziente___getPage(
+        options : P_PazientePageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            P_PazientePage
+    
+
+    
+
+    """
+    Retrieve a single object of class Sequenza_genomica by ID.
+    """
+    Sequenza_genomica___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Sequenza_genomica
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Sequenza_genomica.
+    """
+    Sequenza_genomica___getPage(
+        options : Sequenza_genomicaPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Sequenza_genomicaPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Tipo_esame by ID.
+    """
+    Tipo_esame___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Tipo_esame
+
+
+    """
+    Retrieve a single object of class Tipo_esame by uniques.
+    """
+    Tipo_esame___getByNome
+    (nome: String!, insight: InsightType, disableCache: Boolean = false): Tipo_esame
+
+        
+        
+    """
+    Retrieve a collection of object of class Tipo_esame.
+    """
+    Tipo_esame___getPage(
+        options : Tipo_esamePageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Tipo_esamePage
+    
+
+    
+
+    """
+    Retrieve a single object of class Tipo_visita_mpv by ID.
+    """
+    Tipo_visita_mpv___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Tipo_visita_mpv
+
+
+    """
+    Retrieve a single object of class Tipo_visita_mpv by uniques.
+    """
+    Tipo_visita_mpv___getByCod
+    (cod: Int!, insight: InsightType, disableCache: Boolean = false): Tipo_visita_mpv
+
+
+    """
+    Retrieve a single object of class Tipo_visita_mpv by uniques.
+    """
+    Tipo_visita_mpv___getByNome
+    (nome: String!, insight: InsightType, disableCache: Boolean = false): Tipo_visita_mpv
+
+        
+        
+    """
+    Retrieve a collection of object of class Tipo_visita_mpv.
+    """
+    Tipo_visita_mpv___getPage(
+        options : Tipo_visita_mpvPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Tipo_visita_mpvPage
+    
+
+    
+
+    """
+    Retrieve a single object of class _User by ID.
+    """
+    _User___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): _User
+
+
+        
+        
+    """
+    Retrieve a collection of object of class _User.
+    """
+    _User___getPage(
+        options : _UserPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            _UserPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Anamnesi by ID.
+    """
+    Anamnesi___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Anamnesi
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Anamnesi.
+    """
+    Anamnesi___getPage(
+        options : AnamnesiPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            AnamnesiPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Controllo_clinico by ID.
+    """
+    Controllo_clinico___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Controllo_clinico
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Controllo_clinico.
+    """
+    Controllo_clinico___getPage(
+        options : Controllo_clinicoPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Controllo_clinicoPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Dropout by ID.
+    """
+    Dropout___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Dropout
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Dropout.
+    """
+    Dropout___getPage(
+        options : DropoutPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            DropoutPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Esame_strumentale by ID.
+    """
+    Esame_strumentale___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Esame_strumentale
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Esame_strumentale.
+    """
+    Esame_strumentale___getPage(
+        options : Esame_strumentalePageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Esame_strumentalePage
+    
+
+    
+
+    """
+    Retrieve a single object of class Evento by ID.
+    """
+    Evento___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Evento
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Evento.
+    """
+    Evento___getPage(
+        options : EventoPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            EventoPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Evento_epatico by ID.
+    """
+    Evento_epatico___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Evento_epatico
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Evento_epatico.
+    """
+    Evento_epatico___getPage(
+        options : Evento_epaticoPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Evento_epaticoPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Gravidanza by ID.
+    """
+    Gravidanza___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Gravidanza
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Gravidanza.
+    """
+    Gravidanza___getPage(
+        options : GravidanzaPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            GravidanzaPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Markers_HBV by ID.
+    """
+    Markers_HBV___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Markers_HBV
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Markers_HBV.
+    """
+    Markers_HBV___getPage(
+        options : Markers_HBVPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Markers_HBVPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Markers_HCV by ID.
+    """
+    Markers_HCV___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Markers_HCV
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Markers_HCV.
+    """
+    Markers_HCV___getPage(
+        options : Markers_HCVPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Markers_HCVPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Markers_HIV by ID.
+    """
+    Markers_HIV___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Markers_HIV
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Markers_HIV.
+    """
+    Markers_HIV___getPage(
+        options : Markers_HIVPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Markers_HIVPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Ricovero by ID.
+    """
+    Ricovero___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Ricovero
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Ricovero.
+    """
+    Ricovero___getPage(
+        options : RicoveroPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            RicoveroPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Terapia_altro by ID.
+    """
+    Terapia_altro___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Terapia_altro
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Terapia_altro.
+    """
+    Terapia_altro___getPage(
+        options : Terapia_altroPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Terapia_altroPage
+    
+
+    
+
+    """
+    Retrieve a single object of class Terapia_ARV by ID.
+    """
+    Terapia_ARV___get(_id: ID!, insight: InsightType, disableCache: Boolean = false): Terapia_ARV
+
+
+        
+        
+    """
+    Retrieve a collection of object of class Terapia_ARV.
+    """
+    Terapia_ARV___getPage(
+        options : Terapia_ARVPageOptions = {
+            offset:0 
+            next:10
+            orderBy:[_id___ASC]
+        }, 
+        insight: InsightType, disableCache: Boolean = false
+    ): 
+            Terapia_ARVPage
+    
+    
+        
+"""
+Retrieve the object of singleton class Settings_PRO
+"""
+Settings_PRO___get(insight: InsightType, disableCache: Boolean = false): Settings_PRO
+
+    
+        
+"""
+Retrieve the object of singleton class User_message
+"""
+User_message___get(insight: InsightType, disableCache: Boolean = false): User_message
+
+    
+    
+    """
+    Retrieve a preview object of class Centro_provenienza for an updated instance of Centro_provenienza.
+    """
+    Centro_provenienza___previewUpdate(
+        data: Centro_provenienzaDraftUpdate!
+    ): 
+            Centro_provenienza
+    
+
+    """
+    Retrieve a preview object of class Checks for an updated instance of Checks.
+    """
+    Checks___previewUpdate(
+        data: ChecksDraftUpdate!
+    ): 
+            Checks
+    
+
+    """
+    Retrieve a preview object of class Comorbidita_mpv for an updated instance of Comorbidita_mpv.
+    """
+    Comorbidita_mpv___previewUpdate(
+        data: Comorbidita_mpvDraftUpdate!
+    ): 
+            Comorbidita_mpv
+    
+
+    """
+    Retrieve a preview object of class ExcelImporter for an updated instance of ExcelImporter.
+    """
+    ExcelImporter___previewUpdate(
+        data: ExcelImporterDraftUpdate!
+    ): 
+            ExcelImporter
+    
+
+    """
+    Retrieve a preview object of class Feedback for an updated instance of Feedback.
+    """
+    Feedback___previewUpdate(
+        data: FeedbackDraftUpdate!
+    ): 
+            Feedback
+    
+
+    """
+    Retrieve a preview object of class Gruppo for an updated instance of Gruppo.
+    """
+    Gruppo___previewUpdate(
+        data: GruppoDraftUpdate!
+    ): 
+            Gruppo
+    
+
+    """
+    Retrieve a preview object of class Indicazioni_arruolamento_studi for an updated instance of Indicazioni_arruolamento_studi.
+    """
+    Indicazioni_arruolamento_studi___previewUpdate(
+        data: Indicazioni_arruolamento_studiDraftUpdate!
+    ): 
+            Indicazioni_arruolamento_studi
+    
+
+    """
+    Retrieve a preview object of class Modalita_somministrazione for an updated instance of Modalita_somministrazione.
+    """
+    Modalita_somministrazione___previewUpdate(
+        data: Modalita_somministrazioneDraftUpdate!
+    ): 
+            Modalita_somministrazione
+    
+
+    """
+    Retrieve a preview object of class Paziente for an updated instance of Paziente.
+    """
+    Paziente___previewUpdate(
+        data: PazienteDraftUpdate!
+    ): 
+            Paziente
+    
+
+    """
+    Retrieve a preview object of class P_Paziente for an updated instance of P_Paziente.
+    """
+    P_Paziente___previewUpdate(
+        data: P_PazienteDraftUpdate!
+    ): 
+            P_Paziente
+    
+
+    """
+    Retrieve a preview object of class Sequenza_genomica for an updated instance of Sequenza_genomica.
+    """
+    Sequenza_genomica___previewUpdate(
+        data: Sequenza_genomicaDraftUpdate!
+    ): 
+            Sequenza_genomica
+    
+
+    """
+    Retrieve a preview object of singleton class Settings_PRO for an updated instance of Settings_PRO.
+    """
+    Settings_PRO___previewUpdate(
+        data: Settings_PRODraftUpdate!
+    ): 
+            Settings_PRO
+    
+
+    """
+    Retrieve a preview object of class Tipo_esame for an updated instance of Tipo_esame.
+    """
+    Tipo_esame___previewUpdate(
+        data: Tipo_esameDraftUpdate!
+    ): 
+            Tipo_esame
+    
+
+    """
+    Retrieve a preview object of class Tipo_visita_mpv for an updated instance of Tipo_visita_mpv.
+    """
+    Tipo_visita_mpv___previewUpdate(
+        data: Tipo_visita_mpvDraftUpdate!
+    ): 
+            Tipo_visita_mpv
+    
+
+    """
+    Retrieve a preview object of singleton class User_message for an updated instance of User_message.
+    """
+    User_message___previewUpdate(
+        data: User_messageDraftUpdate!
+    ): 
+            User_message
+    
+
+    """
+    Retrieve a preview object of class _User for an updated instance of _User.
+    """
+    _User___previewUpdate(
+        data: _UserDraftUpdate!
+    ): 
+            _User
+    
+    
+    """
+    Validation of an update on object of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validateUpdate(
+        data: Centro_provenienzaDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validateUpdateBulk(
+        data: Centro_provenienzaDraftUpdateBulk!, 
+        options:Centro_provenienzaPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validateUpdate(
+        data: ChecksDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validateUpdateBulk(
+        data: ChecksDraftUpdateBulk!, 
+        options:ChecksPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validateUpdate(
+        data: Comorbidita_mpvDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validateUpdateBulk(
+        data: Comorbidita_mpvDraftUpdateBulk!, 
+        options:Comorbidita_mpvPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validateUpdate(
+        data: ExcelImporterDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validateUpdateBulk(
+        data: ExcelImporterDraftUpdateBulk!, 
+        options:ExcelImporterPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validateUpdate(
+        data: FeedbackDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validateUpdateBulk(
+        data: FeedbackDraftUpdateBulk!, 
+        options:FeedbackPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validateUpdate(
+        data: GruppoDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validateUpdateBulk(
+        data: GruppoDraftUpdateBulk!, 
+        options:GruppoPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validateUpdate(
+        data: Indicazioni_arruolamento_studiDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validateUpdateBulk(
+        data: Indicazioni_arruolamento_studiDraftUpdateBulk!, 
+        options:Indicazioni_arruolamento_studiPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validateUpdate(
+        data: Modalita_somministrazioneDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validateUpdateBulk(
+        data: Modalita_somministrazioneDraftUpdateBulk!, 
+        options:Modalita_somministrazionePageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validateUpdate(
+        data: PazienteDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validateUpdateBulk(
+        data: PazienteDraftUpdateBulk!, 
+        options:PazientePageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validateUpdate(
+        data: P_PazienteDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validateUpdateBulk(
+        data: P_PazienteDraftUpdateBulk!, 
+        options:P_PazientePageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validateUpdate(
+        data: Sequenza_genomicaDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validateUpdateBulk(
+        data: Sequenza_genomicaDraftUpdateBulk!, 
+        options:Sequenza_genomicaPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of singleton class Settings_PRO.
+    Returns a ValidationResult.
+    """
+    Settings_PRO___validateUpdate(
+        data: Settings_PRODraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    
+
+    """
+    Validation of an update on object of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validateUpdate(
+        data: Tipo_esameDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validateUpdateBulk(
+        data: Tipo_esameDraftUpdateBulk!, 
+        options:Tipo_esamePageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validateUpdate(
+        data: Tipo_visita_mpvDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validateUpdateBulk(
+        data: Tipo_visita_mpvDraftUpdateBulk!, 
+        options:Tipo_visita_mpvPageOptions!
+    ): 
+        ValidationResult
+        
+    
+
+    """
+    Validation of an update on object of singleton class User_message.
+    Returns a ValidationResult.
+    """
+    User_message___validateUpdate(
+        data: User_messageDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    
+
+    """
+    Validation of an update on object of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validateUpdate(
+        data: _UserDraftUpdate!
+    ): 
+            ValidationResult
+        
+        
+    """
+    Validation of a bulk update on a set of objects of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validateUpdateBulk(
+        data: _UserDraftUpdateBulk!, 
+        options:_UserPageOptions!
+    ): 
+        ValidationResult
+        
+    
+    
+    """
+    Validation of a save on object of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validate(
+        data: Centro_provenienzaDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validate(
+        data: ChecksDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validate(
+        data: Comorbidita_mpvDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validate(
+        data: ExcelImporterDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validate(
+        data: FeedbackDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validate(
+        data: GruppoDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validate(
+        data: Indicazioni_arruolamento_studiDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validate(
+        data: Modalita_somministrazioneDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validate(
+        data: PazienteDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validate(
+        data: P_PazienteDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validate(
+        data: Sequenza_genomicaDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validate(
+        data: Tipo_esameDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validate(
+        data: Tipo_visita_mpvDraft!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a save on object of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validate(
+        data: _UserDraft!
+    ): 
+        ValidationResult
+    
+    
+    """
+    Retrieve a preview object of class Centro_provenienza for an object of Centro_provenienza not yet instanced.
+    
+    """
+    Centro_provenienza___preview(
+        data: Centro_provenienzaDraft!
+    ): 
+        Centro_provenienza
+    
+
+    """
+    Retrieve a preview object of class Checks for an object of Checks not yet instanced.
+    
+    """
+    Checks___preview(
+        data: ChecksDraft!
+    ): 
+        Checks
+    
+
+    """
+    Retrieve a preview object of class Comorbidita_mpv for an object of Comorbidita_mpv not yet instanced.
+    
+    """
+    Comorbidita_mpv___preview(
+        data: Comorbidita_mpvDraft!
+    ): 
+        Comorbidita_mpv
+    
+
+    """
+    Retrieve a preview object of class ExcelImporter for an object of ExcelImporter not yet instanced.
+    
+    """
+    ExcelImporter___preview(
+        data: ExcelImporterDraft!
+    ): 
+        ExcelImporter
+    
+
+    """
+    Retrieve a preview object of class Feedback for an object of Feedback not yet instanced.
+    
+    """
+    Feedback___preview(
+        data: FeedbackDraft!
+    ): 
+        Feedback
+    
+
+    """
+    Retrieve a preview object of class Gruppo for an object of Gruppo not yet instanced.
+    
+    """
+    Gruppo___preview(
+        data: GruppoDraft!
+    ): 
+        Gruppo
+    
+
+    """
+    Retrieve a preview object of class Indicazioni_arruolamento_studi for an object of Indicazioni_arruolamento_studi not yet instanced.
+    
+    """
+    Indicazioni_arruolamento_studi___preview(
+        data: Indicazioni_arruolamento_studiDraft!
+    ): 
+        Indicazioni_arruolamento_studi
+    
+
+    """
+    Retrieve a preview object of class Modalita_somministrazione for an object of Modalita_somministrazione not yet instanced.
+    
+    """
+    Modalita_somministrazione___preview(
+        data: Modalita_somministrazioneDraft!
+    ): 
+        Modalita_somministrazione
+    
+
+    """
+    Retrieve a preview object of class Paziente for an object of Paziente not yet instanced.
+    
+    """
+    Paziente___preview(
+        data: PazienteDraft!
+    ): 
+        Paziente
+    
+
+    """
+    Retrieve a preview object of class P_Paziente for an object of P_Paziente not yet instanced.
+    
+    """
+    P_Paziente___preview(
+        data: P_PazienteDraft!
+    ): 
+        P_Paziente
+    
+
+    """
+    Retrieve a preview object of class Sequenza_genomica for an object of Sequenza_genomica not yet instanced.
+    
+    """
+    Sequenza_genomica___preview(
+        data: Sequenza_genomicaDraft!
+    ): 
+        Sequenza_genomica
+    
+
+    """
+    Retrieve a preview object of class Tipo_esame for an object of Tipo_esame not yet instanced.
+    
+    """
+    Tipo_esame___preview(
+        data: Tipo_esameDraft!
+    ): 
+        Tipo_esame
+    
+
+    """
+    Retrieve a preview object of class Tipo_visita_mpv for an object of Tipo_visita_mpv not yet instanced.
+    
+    """
+    Tipo_visita_mpv___preview(
+        data: Tipo_visita_mpvDraft!
+    ): 
+        Tipo_visita_mpv
+    
+
+    """
+    Retrieve a preview object of class _User for an object of _User not yet instanced.
+    
+    """
+    _User___preview(
+        data: _UserDraft!
+    ): 
+        _User
+    
+
+    """
+    Retrieve a preview object of form class Genera_codice_interno for an object of Genera_codice_interno not yet instanced.
+    Note that the passed param should NOT have the _id attribute
+    """
+    Genera_codice_interno___preview(
+        data: Genera_codice_internoDraft!
+    ): 
+        Genera_codice_interno
+    
+        
+    """
+    Validation of a create on object of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validateCreate(
+        data: Centro_provenienzaDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validateCreate(
+        data: ChecksDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validateCreate(
+        data: Comorbidita_mpvDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validateCreate(
+        data: ExcelImporterDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validateCreate(
+        data: FeedbackDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validateCreate(
+        data: GruppoDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validateCreate(
+        data: Indicazioni_arruolamento_studiDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validateCreate(
+        data: Modalita_somministrazioneDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validateCreate(
+        data: PazienteDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validateCreate(
+        data: P_PazienteDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validateCreate(
+        data: Sequenza_genomicaDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validateCreate(
+        data: Tipo_esameDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validateCreate(
+        data: Tipo_visita_mpvDraftCreate!
+    ): 
+        ValidationResult
+        
+
+    """
+    Validation of a create on object of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validateCreate(
+        data: _UserDraftCreate!
+    ): 
+        ValidationResult
+        
+    
+    """
+    Retrieve a preview object of class Centro_provenienza for an object of Centro_provenienza not yet instanced.
+    """
+    Centro_provenienza___previewCreate(
+        data: Centro_provenienzaDraftCreate!
+    ): 
+        Centro_provenienza
+        
+    
+
+    """
+    Retrieve a preview object of class Checks for an object of Checks not yet instanced.
+    """
+    Checks___previewCreate(
+        data: ChecksDraftCreate!
+    ): 
+        Checks
+        
+    
+
+    """
+    Retrieve a preview object of class Comorbidita_mpv for an object of Comorbidita_mpv not yet instanced.
+    """
+    Comorbidita_mpv___previewCreate(
+        data: Comorbidita_mpvDraftCreate!
+    ): 
+        Comorbidita_mpv
+        
+    
+
+    """
+    Retrieve a preview object of class ExcelImporter for an object of ExcelImporter not yet instanced.
+    """
+    ExcelImporter___previewCreate(
+        data: ExcelImporterDraftCreate!
+    ): 
+        ExcelImporter
+        
+    
+
+    """
+    Retrieve a preview object of class Feedback for an object of Feedback not yet instanced.
+    """
+    Feedback___previewCreate(
+        data: FeedbackDraftCreate!
+    ): 
+        Feedback
+        
+    
+
+    """
+    Retrieve a preview object of form class Genera_codice_interno for an object of Genera_codice_interno not yet instanced.
+    """
+    Genera_codice_interno___previewCreate(
+        data: Genera_codice_internoDraftCreate!
+    ): 
+        Genera_codice_interno
+        
+    
+
+    """
+    Retrieve a preview object of class Gruppo for an object of Gruppo not yet instanced.
+    """
+    Gruppo___previewCreate(
+        data: GruppoDraftCreate!
+    ): 
+        Gruppo
+        
+    
+
+    """
+    Retrieve a preview object of class Indicazioni_arruolamento_studi for an object of Indicazioni_arruolamento_studi not yet instanced.
+    """
+    Indicazioni_arruolamento_studi___previewCreate(
+        data: Indicazioni_arruolamento_studiDraftCreate!
+    ): 
+        Indicazioni_arruolamento_studi
+        
+    
+
+    """
+    Retrieve a preview object of class Modalita_somministrazione for an object of Modalita_somministrazione not yet instanced.
+    """
+    Modalita_somministrazione___previewCreate(
+        data: Modalita_somministrazioneDraftCreate!
+    ): 
+        Modalita_somministrazione
+        
+    
+
+    """
+    Retrieve a preview object of class Paziente for an object of Paziente not yet instanced.
+    """
+    Paziente___previewCreate(
+        data: PazienteDraftCreate!
+    ): 
+        Paziente
+        
+    
+
+    """
+    Retrieve a preview object of class P_Paziente for an object of P_Paziente not yet instanced.
+    """
+    P_Paziente___previewCreate(
+        data: P_PazienteDraftCreate!
+    ): 
+        P_Paziente
+        
+    
+
+    """
+    Retrieve a preview object of class Sequenza_genomica for an object of Sequenza_genomica not yet instanced.
+    """
+    Sequenza_genomica___previewCreate(
+        data: Sequenza_genomicaDraftCreate!
+    ): 
+        Sequenza_genomica
+        
+    
+
+    """
+    Retrieve a preview object of class Tipo_esame for an object of Tipo_esame not yet instanced.
+    """
+    Tipo_esame___previewCreate(
+        data: Tipo_esameDraftCreate!
+    ): 
+        Tipo_esame
+        
+    
+
+    """
+    Retrieve a preview object of class Tipo_visita_mpv for an object of Tipo_visita_mpv not yet instanced.
+    """
+    Tipo_visita_mpv___previewCreate(
+        data: Tipo_visita_mpvDraftCreate!
+    ): 
+        Tipo_visita_mpv
+        
+    
+
+    """
+    Retrieve a preview object of class _User for an object of _User not yet instanced.
+    """
+    _User___previewCreate(
+        data: _UserDraftCreate!
+    ): 
+        _User
+        
+    
+
+
+    """
+    Validation of a delete on object of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Centro_provenienza.
+    Returns a ValidationResult.
+    """
+    Centro_provenienza___validateDeleteBulk(
+        options:Centro_provenienzaPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Checks.
+    Returns a ValidationResult.
+    """
+    Checks___validateDeleteBulk(
+        options:ChecksPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Comorbidita_mpv.
+    Returns a ValidationResult.
+    """
+    Comorbidita_mpv___validateDeleteBulk(
+        options:Comorbidita_mpvPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class ExcelImporter.
+    Returns a ValidationResult.
+    """
+    ExcelImporter___validateDeleteBulk(
+        options:ExcelImporterPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Feedback.
+    Returns a ValidationResult.
+    """
+    Feedback___validateDeleteBulk(
+        options:FeedbackPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Gruppo.
+    Returns a ValidationResult.
+    """
+    Gruppo___validateDeleteBulk(
+        options:GruppoPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Indicazioni_arruolamento_studi.
+    Returns a ValidationResult.
+    """
+    Indicazioni_arruolamento_studi___validateDeleteBulk(
+        options:Indicazioni_arruolamento_studiPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Modalita_somministrazione.
+    Returns a ValidationResult.
+    """
+    Modalita_somministrazione___validateDeleteBulk(
+        options:Modalita_somministrazionePageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Paziente.
+    Returns a ValidationResult.
+    """
+    Paziente___validateDeleteBulk(
+        options:PazientePageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class P_Paziente.
+    Returns a ValidationResult.
+    """
+    P_Paziente___validateDeleteBulk(
+        options:P_PazientePageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Sequenza_genomica.
+    Returns a ValidationResult.
+    """
+    Sequenza_genomica___validateDeleteBulk(
+        options:Sequenza_genomicaPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Tipo_esame.
+    Returns a ValidationResult.
+    """
+    Tipo_esame___validateDeleteBulk(
+        options:Tipo_esamePageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class Tipo_visita_mpv.
+    Returns a ValidationResult.
+    """
+    Tipo_visita_mpv___validateDeleteBulk(
+        options:Tipo_visita_mpvPageOptions!
+    ): 
+        ValidationResult
+    
+
+    """
+    Validation of a delete on object of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validateDelete(
+        _id: ID!
+    ): 
+        ValidationResult
+    
+    """
+    Validation of a bulk delete on a set of objects of class _User.
+    Returns a ValidationResult.
+    """
+    _User___validateDeleteBulk(
+        options:_UserPageOptions!
+    ): 
+        ValidationResult
+    
+
+
+}
+
+"""
+Use a Mutation to create, update and delete data.
+"""
+type Mutation {
+    
+        """
+        Create an object of class Centro_provenienza.
+        Returns the newly created object.
+        """
+        Centro_provenienza___create(
+            data: Centro_provenienzaCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Centro_provenienza
+    
+
+        """
+        Create an object of class Checks.
+        Returns the newly created object.
+        """
+        Checks___create(
+            data: ChecksCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Checks
+    
+
+        """
+        Create an object of class Comorbidita_mpv.
+        Returns the newly created object.
+        """
+        Comorbidita_mpv___create(
+            data: Comorbidita_mpvCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Comorbidita_mpv
+    
+
+        """
+        Create an object of class ExcelImporter.
+        Returns the newly created object.
+        """
+        ExcelImporter___create(
+            data: ExcelImporterCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            ExcelImporter
+    
+
+        """
+        Create an object of class Feedback.
+        Returns the newly created object.
+        """
+        Feedback___create(
+            data: FeedbackCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Feedback
+    
+
+        """
+        Create an object of class Gruppo.
+        Returns the newly created object.
+        """
+        Gruppo___create(
+            data: GruppoCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Gruppo
+    
+
+        """
+        Create an object of class Indicazioni_arruolamento_studi.
+        Returns the newly created object.
+        """
+        Indicazioni_arruolamento_studi___create(
+            data: Indicazioni_arruolamento_studiCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Indicazioni_arruolamento_studi
+    
+
+        """
+        Create an object of class Modalita_somministrazione.
+        Returns the newly created object.
+        """
+        Modalita_somministrazione___create(
+            data: Modalita_somministrazioneCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Modalita_somministrazione
+    
+
+        """
+        Create an object of class Paziente.
+        Returns the newly created object.
+        """
+        Paziente___create(
+            data: PazienteCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Paziente
+    
+
+        """
+        Create an object of class P_Paziente.
+        Returns the newly created object.
+        """
+        P_Paziente___create(
+            data: P_PazienteCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            P_Paziente
+    
+
+        """
+        Create an object of class Sequenza_genomica.
+        Returns the newly created object.
+        """
+        Sequenza_genomica___create(
+            data: Sequenza_genomicaCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Sequenza_genomica
+    
+
+        """
+        Create an object of class Tipo_esame.
+        Returns the newly created object.
+        """
+        Tipo_esame___create(
+            data: Tipo_esameCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_esame
+    
+
+        """
+        Create an object of class Tipo_visita_mpv.
+        Returns the newly created object.
+        """
+        Tipo_visita_mpv___create(
+            data: Tipo_visita_mpvCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_visita_mpv
+    
+
+        """
+        Create an object of class _User.
+        Returns the newly created object.
+        """
+        _User___create(
+            data: _UserCreate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            _User
+    
+    
+    
+        """
+        Update an object of class Centro_provenienza.
+        Returns the newly created object.
+        """
+        Centro_provenienza___update(
+            data: Centro_provenienzaUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Centro_provenienza
+        
+        """
+        Bulk update a set of objects of class Centro_provenienza.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Centro_provenienza___updateBulk(
+            data: Centro_provenienzaUpdateBulk!, 
+            options:Centro_provenienzaPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Centro_provenienzaBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Checks.
+        Returns the newly created object.
+        """
+        Checks___update(
+            data: ChecksUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Checks
+        
+        """
+        Bulk update a set of objects of class Checks.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Checks___updateBulk(
+            data: ChecksUpdateBulk!, 
+            options:ChecksPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            ChecksBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Comorbidita_mpv.
+        Returns the newly created object.
+        """
+        Comorbidita_mpv___update(
+            data: Comorbidita_mpvUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Comorbidita_mpv
+        
+        """
+        Bulk update a set of objects of class Comorbidita_mpv.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Comorbidita_mpv___updateBulk(
+            data: Comorbidita_mpvUpdateBulk!, 
+            options:Comorbidita_mpvPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Comorbidita_mpvBulkResult
+        
+        
+    
+
+        """
+        Update an object of class ExcelImporter.
+        Returns the newly created object.
+        """
+        ExcelImporter___update(
+            data: ExcelImporterUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            ExcelImporter
+        
+        """
+        Bulk update a set of objects of class ExcelImporter.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        ExcelImporter___updateBulk(
+            data: ExcelImporterUpdateBulk!, 
+            options:ExcelImporterPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            ExcelImporterBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Feedback.
+        Returns the newly created object.
+        """
+        Feedback___update(
+            data: FeedbackUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Feedback
+        
+        """
+        Bulk update a set of objects of class Feedback.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Feedback___updateBulk(
+            data: FeedbackUpdateBulk!, 
+            options:FeedbackPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            FeedbackBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Gruppo.
+        Returns the newly created object.
+        """
+        Gruppo___update(
+            data: GruppoUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Gruppo
+        
+        """
+        Bulk update a set of objects of class Gruppo.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Gruppo___updateBulk(
+            data: GruppoUpdateBulk!, 
+            options:GruppoPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            GruppoBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Indicazioni_arruolamento_studi.
+        Returns the newly created object.
+        """
+        Indicazioni_arruolamento_studi___update(
+            data: Indicazioni_arruolamento_studiUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Indicazioni_arruolamento_studi
+        
+        """
+        Bulk update a set of objects of class Indicazioni_arruolamento_studi.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Indicazioni_arruolamento_studi___updateBulk(
+            data: Indicazioni_arruolamento_studiUpdateBulk!, 
+            options:Indicazioni_arruolamento_studiPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Indicazioni_arruolamento_studiBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Modalita_somministrazione.
+        Returns the newly created object.
+        """
+        Modalita_somministrazione___update(
+            data: Modalita_somministrazioneUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Modalita_somministrazione
+        
+        """
+        Bulk update a set of objects of class Modalita_somministrazione.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Modalita_somministrazione___updateBulk(
+            data: Modalita_somministrazioneUpdateBulk!, 
+            options:Modalita_somministrazionePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Modalita_somministrazioneBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Paziente.
+        Returns the newly created object.
+        """
+        Paziente___update(
+            data: PazienteUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Paziente
+        
+        """
+        Bulk update a set of objects of class Paziente.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Paziente___updateBulk(
+            data: PazienteUpdateBulk!, 
+            options:PazientePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            PazienteBulkResult
+        
+        
+    
+
+        """
+        Update an object of class P_Paziente.
+        Returns the newly created object.
+        """
+        P_Paziente___update(
+            data: P_PazienteUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            P_Paziente
+        
+        """
+        Bulk update a set of objects of class P_Paziente.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        P_Paziente___updateBulk(
+            data: P_PazienteUpdateBulk!, 
+            options:P_PazientePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            P_PazienteBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Sequenza_genomica.
+        Returns the newly created object.
+        """
+        Sequenza_genomica___update(
+            data: Sequenza_genomicaUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Sequenza_genomica
+        
+        """
+        Bulk update a set of objects of class Sequenza_genomica.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Sequenza_genomica___updateBulk(
+            data: Sequenza_genomicaUpdateBulk!, 
+            options:Sequenza_genomicaPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Sequenza_genomicaBulkResult
+        
+        
+    
+
+        """
+        Update an object of singleton class Settings_PRO.
+        Returns the newly created object.
+        """
+        Settings_PRO___update(
+            data: Settings_PROUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Settings_PRO
+        
+    
+
+        """
+        Update an object of class Tipo_esame.
+        Returns the newly created object.
+        """
+        Tipo_esame___update(
+            data: Tipo_esameUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_esame
+        
+        """
+        Bulk update a set of objects of class Tipo_esame.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Tipo_esame___updateBulk(
+            data: Tipo_esameUpdateBulk!, 
+            options:Tipo_esamePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_esameBulkResult
+        
+        
+    
+
+        """
+        Update an object of class Tipo_visita_mpv.
+        Returns the newly created object.
+        """
+        Tipo_visita_mpv___update(
+            data: Tipo_visita_mpvUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_visita_mpv
+        
+        """
+        Bulk update a set of objects of class Tipo_visita_mpv.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        Tipo_visita_mpv___updateBulk(
+            data: Tipo_visita_mpvUpdateBulk!, 
+            options:Tipo_visita_mpvPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_visita_mpvBulkResult
+        
+        
+    
+
+        """
+        Update an object of singleton class User_message.
+        Returns the newly created object.
+        """
+        User_message___update(
+            data: User_messageUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            User_message
+        
+    
+
+        """
+        Update an object of class _User.
+        Returns the newly created object.
+        """
+        _User___update(
+            data: _UserUpdate!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            _User
+        
+        """
+        Bulk update a set of objects of class _User.
+        Returns an array of updated objects and a number representing the total count of items affected.
+        """
+        _User___updateBulk(
+            data: _UserUpdateBulk!, 
+            options:_UserPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            _UserBulkResult
+        
+        
+    
+    
+    
+        """
+        Create or update an object of class Centro_provenienza.
+        Returns the newly created/updated object.
+        """
+        Centro_provenienza___save(
+            data: Centro_provenienzaDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Centro_provenienza
+    
+
+        """
+        Create or update an object of class Checks.
+        Returns the newly created/updated object.
+        """
+        Checks___save(
+            data: ChecksDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Checks
+    
+
+        """
+        Create or update an object of class Comorbidita_mpv.
+        Returns the newly created/updated object.
+        """
+        Comorbidita_mpv___save(
+            data: Comorbidita_mpvDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Comorbidita_mpv
+    
+
+        """
+        Create or update an object of class ExcelImporter.
+        Returns the newly created/updated object.
+        """
+        ExcelImporter___save(
+            data: ExcelImporterDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            ExcelImporter
+    
+
+        """
+        Create or update an object of class Feedback.
+        Returns the newly created/updated object.
+        """
+        Feedback___save(
+            data: FeedbackDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Feedback
+    
+
+        """
+        Create or update an object of class Gruppo.
+        Returns the newly created/updated object.
+        """
+        Gruppo___save(
+            data: GruppoDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Gruppo
+    
+
+        """
+        Create or update an object of class Indicazioni_arruolamento_studi.
+        Returns the newly created/updated object.
+        """
+        Indicazioni_arruolamento_studi___save(
+            data: Indicazioni_arruolamento_studiDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Indicazioni_arruolamento_studi
+    
+
+        """
+        Create or update an object of class Modalita_somministrazione.
+        Returns the newly created/updated object.
+        """
+        Modalita_somministrazione___save(
+            data: Modalita_somministrazioneDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Modalita_somministrazione
+    
+
+        """
+        Create or update an object of class Paziente.
+        Returns the newly created/updated object.
+        """
+        Paziente___save(
+            data: PazienteDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Paziente
+    
+
+        """
+        Create or update an object of class P_Paziente.
+        Returns the newly created/updated object.
+        """
+        P_Paziente___save(
+            data: P_PazienteDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            P_Paziente
+    
+
+        """
+        Create or update an object of class Sequenza_genomica.
+        Returns the newly created/updated object.
+        """
+        Sequenza_genomica___save(
+            data: Sequenza_genomicaDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Sequenza_genomica
+    
+
+        """
+        Create or update an object of class Tipo_esame.
+        Returns the newly created/updated object.
+        """
+        Tipo_esame___save(
+            data: Tipo_esameDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_esame
+    
+
+        """
+        Create or update an object of class Tipo_visita_mpv.
+        Returns the newly created/updated object.
+        """
+        Tipo_visita_mpv___save(
+            data: Tipo_visita_mpvDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            Tipo_visita_mpv
+    
+
+        """
+        Create or update an object of class _User.
+        Returns the newly created/updated object.
+        """
+        _User___save(
+            data: _UserDraft!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ): 
+            _User
+    
+    
+        """
+        Delete an object of class Centro_provenienza.
+        Returns true if the object has been deleted successfully.
+        """
+        Centro_provenienza___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Centro_provenienza.
+        Returns the number of object successfully deleted.
+        """
+        Centro_provenienza___deleteBulk(
+            options:Centro_provenienzaPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Checks.
+        Returns true if the object has been deleted successfully.
+        """
+        Checks___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Checks.
+        Returns the number of object successfully deleted.
+        """
+        Checks___deleteBulk(
+            options:ChecksPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Comorbidita_mpv.
+        Returns true if the object has been deleted successfully.
+        """
+        Comorbidita_mpv___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Comorbidita_mpv.
+        Returns the number of object successfully deleted.
+        """
+        Comorbidita_mpv___deleteBulk(
+            options:Comorbidita_mpvPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class ExcelImporter.
+        Returns true if the object has been deleted successfully.
+        """
+        ExcelImporter___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class ExcelImporter.
+        Returns the number of object successfully deleted.
+        """
+        ExcelImporter___deleteBulk(
+            options:ExcelImporterPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Feedback.
+        Returns true if the object has been deleted successfully.
+        """
+        Feedback___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Feedback.
+        Returns the number of object successfully deleted.
+        """
+        Feedback___deleteBulk(
+            options:FeedbackPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Gruppo.
+        Returns true if the object has been deleted successfully.
+        """
+        Gruppo___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Gruppo.
+        Returns the number of object successfully deleted.
+        """
+        Gruppo___deleteBulk(
+            options:GruppoPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Indicazioni_arruolamento_studi.
+        Returns true if the object has been deleted successfully.
+        """
+        Indicazioni_arruolamento_studi___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Indicazioni_arruolamento_studi.
+        Returns the number of object successfully deleted.
+        """
+        Indicazioni_arruolamento_studi___deleteBulk(
+            options:Indicazioni_arruolamento_studiPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Modalita_somministrazione.
+        Returns true if the object has been deleted successfully.
+        """
+        Modalita_somministrazione___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Modalita_somministrazione.
+        Returns the number of object successfully deleted.
+        """
+        Modalita_somministrazione___deleteBulk(
+            options:Modalita_somministrazionePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Paziente.
+        Returns true if the object has been deleted successfully.
+        """
+        Paziente___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Paziente.
+        Returns the number of object successfully deleted.
+        """
+        Paziente___deleteBulk(
+            options:PazientePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class P_Paziente.
+        Returns true if the object has been deleted successfully.
+        """
+        P_Paziente___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class P_Paziente.
+        Returns the number of object successfully deleted.
+        """
+        P_Paziente___deleteBulk(
+            options:P_PazientePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Sequenza_genomica.
+        Returns true if the object has been deleted successfully.
+        """
+        Sequenza_genomica___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Sequenza_genomica.
+        Returns the number of object successfully deleted.
+        """
+        Sequenza_genomica___deleteBulk(
+            options:Sequenza_genomicaPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Tipo_esame.
+        Returns true if the object has been deleted successfully.
+        """
+        Tipo_esame___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Tipo_esame.
+        Returns the number of object successfully deleted.
+        """
+        Tipo_esame___deleteBulk(
+            options:Tipo_esamePageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class Tipo_visita_mpv.
+        Returns true if the object has been deleted successfully.
+        """
+        Tipo_visita_mpv___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class Tipo_visita_mpv.
+        Returns the number of object successfully deleted.
+        """
+        Tipo_visita_mpv___deleteBulk(
+            options:Tipo_visita_mpvPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+        """
+        Delete an object of class _User.
+        Returns true if the object has been deleted successfully.
+        """
+        _User___delete(
+            _id: ID!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteResult
+        
+        """
+        Bulk delete a set of objects of class _User.
+        Returns the number of object successfully deleted.
+        """
+        _User___deleteBulk(
+            options:_UserPageOptions!, 
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            }
+        ): 
+            DeleteBulkResult
+    
+
+    
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named importaQuestionariPRO on an object of class Paziente.
+        """
+        Paziente___formAction___importaQuestionariPRO(
+            data: PazienteDraft
+            
+            jsonParam: String
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            PazienteFormActionHandlerResult
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named importaQuestionariPRO on a new object of class Paziente.
+        """
+        Paziente___create___formAction___importaQuestionariPRO(
+            data: PazienteDraftCreate
+            
+            jsonParam: String
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            PazienteFormActionHandlerResult
+        
+        
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named importaQuestionariPRO on an existing object of class Paziente.
+        """
+        Paziente___update___formAction___importaQuestionariPRO(
+            data: PazienteDraftUpdate
+            
+            jsonParam: String
+        forceWarnings: ForceWarnings = {
+            actionVeto: false 
+            dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            PazienteFormActionHandlerResult
+        
+    
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named generaCodicePride on an object of class P_Paziente.
+        """
+        P_Paziente___formAction___generaCodicePride(
+            data: P_PazienteDraft
+            
+                formParam: Genera_codice_internoDraft!
+            
+            jsonParam: String
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            P_PazienteFormActionHandlerResult
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named generaCodicePride on a new object of class P_Paziente.
+        """
+        P_Paziente___create___formAction___generaCodicePride(
+            data: P_PazienteDraftCreate
+            
+                formParam: Genera_codice_internoDraftCreate!
+            
+            jsonParam: String
+            forceWarnings: ForceWarnings = {
+                actionVeto: false 
+                dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            P_PazienteFormActionHandlerResult
+        
+        
+        
+        """
+        BETA: this service is still in beta. It can change in future releases.
+        Invoke the form action handler named generaCodicePride on an existing object of class P_Paziente.
+        """
+        P_Paziente___update___formAction___generaCodicePride(
+            data: P_PazienteDraftUpdate
+            
+                formParam: Genera_codice_internoDraft!
+            
+            jsonParam: String
+        forceWarnings: ForceWarnings = {
+            actionVeto: false 
+            dataValidation: false
+            },
+            insight: InsightType, disableCache: Boolean = false
+        ):
+            P_PazienteFormActionHandlerResult
+        
+    
+    
+    lock(
+        locks:[EntityID!]!, 
+        minutes: Int = 10
+    ): 
+        LockStatusResult
+        
+    unlock(
+        locks:[EntityID!]!
+    ): 
+        LockStatusResult
+}
+                

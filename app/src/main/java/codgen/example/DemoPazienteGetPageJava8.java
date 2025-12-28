@@ -1,0 +1,61 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package codgen.example;
+
+import codgen.client.GraphQLErrorDTO;
+import codgen.client.GraphQLRequestException;
+import codgen.client.ReusableGraphQLClient;
+import icona.graphql.*;
+import java.util.Arrays;
+
+public class DemoPazienteGetPageJava8 {
+
+    public static void main(String[] args) throws Exception {
+
+        ReusableGraphQLClient client = new ReusableGraphQLClient(
+                "https://www.icona.org/iuri/ICONA_db/auth/api/graphql/ICONA",
+                "iuri",
+                "iurfan"
+        );
+
+        CliPazientePageOptionsDTO options = CliPazientePageOptionsDTO.builder()
+                .setOrderBy(Arrays.asList(CliPazienteSortDTO._id___ASC))
+                .build();
+
+        // request generata
+        Paziente___getPageQueryRequest req = Paziente___getPageQueryRequest.builder()
+                .setOptions(options)
+                .build();
+
+        // projection generata
+        PazientePageResponseProjection proj = new PazientePageResponseProjection()
+                .items(new PazienteResponseProjection()
+                        ._id()
+                        .codice_interno()
+                        .anno_nascita()
+                );
+
+        try {
+            // risposta generata (contiene data/errors)
+            Paziente___getPageQueryResponse resp
+                    = client.execute(req, proj, Paziente___getPageQueryResponse.class);
+
+            CliPazientePageDTO page = resp.Paziente___getPage();
+
+            System.out.println("totalCount=" + page.getTotalCount());
+            System.out.println("hasNext=" + page.getHasNext());
+            for (CliPazienteDTO p : page.getItems()) {
+                System.out.println(p.get_id() + " " + p.getCodice_interno() + " " + p.getAnno_nascita());
+            }
+
+        } catch (GraphQLRequestException ex) {
+            // errors[] tipizzati
+            System.err.println(ex.getMessage());
+            for (GraphQLErrorDTO e : ex.getErrors()) {
+                System.err.println("ERR: " + e);
+            }
+        }
+    }
+}

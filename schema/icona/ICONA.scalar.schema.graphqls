@@ -1,0 +1,17 @@
+               """
+The Cursor type represents a [Cursor](https://en.wikipedia.org/wiki/Cursor_%28databases%29),
+that is a pointer to one element that enables traversal over the records.
+"""
+scalar Cursor
+scalar Real
+scalar Text
+scalar Year
+scalar Time
+scalar Date
+scalar Datetime
+scalar Serial
+
+directive @dateFormat on FIELD_DEFINITION
+directive @timeFormat on FIELD_DEFINITION
+directive @datetimeFormat on FIELD_DEFINITION
+directive @realFormat on FIELD_DEFINITION
