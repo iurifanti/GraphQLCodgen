@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -160,7 +161,13 @@ public class GraphQLClient {
 
     private String serializeInputArguments(Map<String, Object> input) {
         return input.entrySet().stream()
-                .map(entry -> entry.getKey() + ":" + GraphQLRequestSerializer.getEntry(prepareValue(entry.getValue())))
+                .map(entry -> {
+                    Object prepared = prepareValue(entry.getValue());
+                    return prepared == null
+                            ? null
+                            : entry.getKey() + ":" + GraphQLRequestSerializer.getEntry(prepared);
+                })
+                .filter(Objects::nonNull)
                 .collect(Collectors.joining(", "));
     }
 
@@ -206,7 +213,10 @@ public class GraphQLClient {
         Map<String, Object> converted = new LinkedHashMap<>();
         for (Map.Entry<?, ?> entry : map.entrySet()) {
             String key = String.valueOf(entry.getKey());
-            converted.put(key, prepareValue(entry.getValue()));
+            Object prepared = prepareValue(entry.getValue());
+            if (prepared != null) {
+                converted.put(key, prepared);
+            }
         }
         return converted;
     }
@@ -224,7 +234,10 @@ public class GraphQLClient {
                     getter.setAccessible(true);
                 }
                 Object propertyValue = getter.invoke(bean);
-                result.put(descriptor.getName(), prepareValue(propertyValue));
+                Object prepared = prepareValue(propertyValue);
+                if (prepared != null) {
+                    result.put(descriptor.getName(), prepared);
+                }
             }
             return result;
         } catch (Exception e) {
