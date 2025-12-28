@@ -7,14 +7,28 @@ package codgen.client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLOperationRequest;
+import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLRequestSerializer;
 import com.kobylynskyi.graphql.codegen.model.graphql.GraphQLResponseProjection;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class GraphQLClient {
+
+    private static final String DEFAULT_PROJECTION = "{ __typename }";
 
     private final String endpoint;
     private final String authorizationHeader; // "Basic ...." oppure null
@@ -36,26 +50,20 @@ public class GraphQLClient {
             GraphQLResponseProjection projection,
             Class<T> responseClass) throws IOException {
 
-        // 1) Costruisci query GraphQL SENZA chiavi quotate e SENZA enum quotati
         String graphQL = buildGraphQLDocument(request, projection);
-        System.out.println("graphQL: " + graphQL);
 
-        // 2) Payload standard
         Map<String, Object> payload = new HashMap<>();
         payload.put("query", graphQL);
         String payloadJson = mapper.writeValueAsString(payload);
 
-        // 3) HTTP POST
         String responseJson = postJson(payloadJson);
 
-        // 4) parse errors[] tipizzati
         JsonNode root = mapper.readTree(responseJson);
         List<GraphQLErrorDTO> errors = parseErrors(root);
         if (!errors.isEmpty()) {
             throw new GraphQLRequestException(errors);
         }
 
-        // 5) deserializza TUTTA la risposta (data/errors) nella classe generata
         return mapper.readValue(responseJson, responseClass);
     }
 
@@ -69,20 +77,20 @@ public class GraphQLClient {
         }
         conn.setDoOutput(true);
 
-        OutputStream os = conn.getOutputStream();
-        os.write(jsonBody.getBytes(StandardCharsets.UTF_8));
-        os.close();
+        try (OutputStream os = conn.getOutputStream()) {
+            os.write(jsonBody.getBytes(StandardCharsets.UTF_8));
+        }
 
         InputStream is = conn.getResponseCode() < 400 ? conn.getInputStream() : conn.getErrorStream();
-        BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
 
-        StringBuilder sb = new StringBuilder();
-        String line;
-        while ((line = br.readLine()) != null) {
-            sb.append(line);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
+            return sb.toString();
         }
-        br.close();
-        return sb.toString();
     }
 
     private List<GraphQLErrorDTO> parseErrors(JsonNode root) throws IOException {
@@ -105,139 +113,75 @@ public class GraphQLClient {
     }
 
     /**
-     * Crea un documento GraphQL: query { [alias:] OperationName(arg1:...,
-     * arg2:...) <projection> }
-     *
-     * - Le chiavi delle mappe non vengono mai quotate - Gli enum (es.
-     * _id___ASC) non vengono mai quotati
+     * Crea un documento GraphQL utilizzando i serializer generati
+     * (GraphQLRequestSerializer) per rispettare le regole di quoting di mappe,
+     * enum e liste.
      */
     private String buildGraphQLDocument(GraphQLOperationRequest request, GraphQLResponseProjection projection) {
         StringBuilder sb = new StringBuilder();
 
-        // OPERATION TYPE (di solito "query" per Paziente___getPage)
-        String opType = request.getOperationType() != null ? request.getOperationType().name().toLowerCase() : "query";
+        String opType = Optional.ofNullable(request.getOperationType())
+                .map(Enum::name)
+                .map(String::toLowerCase)
+                .orElse("query");
         sb.append(opType).append(" { ");
 
-        // alias opzionale
-        String alias = request.getAlias();
         String opName = request.getOperationName();
+        String alias = Optional.ofNullable(request.getAlias())
+                .map(String::trim)
+                .filter(a -> !a.isEmpty())
+                .filter(a -> !a.equals(opName))
+                .orElse(null);
 
-        if (alias != null && alias.trim().length() > 0 && !alias.equals(opName)) {
+        if (alias != null) {
             sb.append(alias).append(": ");
         }
 
         sb.append(opName);
 
-        // args (input)
         Map<String, Object> input = request.getInput();
         if (input != null && !input.isEmpty()) {
-            sb.append("(");
-            boolean first = true;
-            for (Map.Entry<String, Object> e : input.entrySet()) {
-                // qui puoi decidere se saltare i null; io li lascio come "name:null"
-                if (!first) {
-                    sb.append(", ");
-                }
-                first = false;
-                sb.append(e.getKey()).append(":").append(serializeValue(e.getValue()));
+            String serializedInput = serializeInputArguments(input);
+            if (!serializedInput.isEmpty()) {
+                sb.append("(").append(serializedInput).append(")");
             }
-            sb.append(")");
         }
 
-        // projection: assicura che sia tra { ... }
-        String proj = projection != null ? projection.toString() : "";
-        proj = ensureBracedSelection(proj);
+        String proj = normalizeProjection(projection);
         sb.append(" ").append(proj).append(" }");
 
         return sb.toString();
     }
 
-    private static String ensureBracedSelection(String s) {
-        if (s == null) {
-            return "{ __typename }";
-        }
-        String t = s.trim();
-        if (t.startsWith("{")) {
-            return t;
-        }
-        // se il runtime toString() ti restituisce solo "items { ... }" senza outer braces
-        return "{ " + t + " }";
+    private String serializeInputArguments(Map<String, Object> input) {
+        return input.entrySet().stream()
+                .map(entry -> entry.getKey() + ":" + GraphQLRequestSerializer.getEntry(prepareValue(entry.getValue())))
+                .collect(Collectors.joining(", "));
     }
 
-    /**
-     * Serializzazione GraphQL "corretta": - String: "..." - Number/Boolean: 123
-     * / true - Enum: NAME (senza virgolette) - Map: {k:v,...} (k SENZA
-     * virgolette) - Collection: [v1,v2] (enum senza virgolette) - POJO/DTO:
-     * convertito a Map via Jackson e poi serializzato
-     */
-    private String serializeValue(Object v) {
-        if (v == null) {
-            return "null";
+    private Object prepareValue(Object value) {
+        if (value == null) {
+            return null;
         }
-
-        if (v instanceof String) {
-            if (((String) v).contains("___")) {
-                return (String) v;
-            } else {
-                return quoteGraphQLString((String) v);
-            }
+        if (value instanceof Map || value instanceof Iterable || value.getClass().isArray()) {
+            return value;
         }
-        if (v instanceof Number || v instanceof Boolean) {
-            return String.valueOf(v);
+        // Garantisce che DTO generati vengano serializzati come mappe usando Jackson
+        if (value instanceof String || value instanceof Number || value instanceof Boolean || value instanceof Enum<?>) {
+            return value;
         }
-        if (v instanceof Enum) {
-            return ((Enum<?>) v).name(); // ✅ enum NON quotato (es. _id___ASC)
-        }
-        if (v instanceof Map) {
-            @SuppressWarnings("unchecked")
-            Map<String, Object> m = (Map<String, Object>) v;
-            return serializeMap(m);
-        }
-        if (v instanceof Collection) {
-            @SuppressWarnings("unchecked")
-            Collection<Object> c = (Collection<Object>) v;
-            return serializeCollection(c);
-        }
-
-        // DTO generati: li convertiamo in Map con Jackson e poi serializziamo
-        @SuppressWarnings("unchecked")
-        Map<String, Object> asMap = mapper.convertValue(v, Map.class);
-        return serializeMap(asMap);
+        return mapper.convertValue(value, Map.class);
     }
 
-    private String serializeMap(Map<String, Object> m) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        boolean first = true;
-        for (Map.Entry<String, Object> e : m.entrySet()) {
-            if (!first) {
-                sb.append(",");
-            }
-            first = false;
-            sb.append(e.getKey()).append(":").append(serializeValue(e.getValue()));
+    private String normalizeProjection(GraphQLResponseProjection projection) {
+        String proj = projection != null ? projection.toString() : DEFAULT_PROJECTION;
+        if (proj == null || proj.trim().isEmpty()) {
+            return DEFAULT_PROJECTION;
         }
-        sb.append("}");
-        return sb.toString();
-    }
-
-    private String serializeCollection(Collection<Object> c) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        boolean first = true;
-        for (Object o : c) {
-            if (!first) {
-                sb.append(",");
-            }
-            first = false;
-            sb.append(serializeValue(o));
+        String trimmed = proj.trim();
+        if (trimmed.startsWith("{")) {
+            return trimmed;
         }
-        sb.append("]");
-        return sb.toString();
-    }
-
-    private static String quoteGraphQLString(String s) {
-        // Escape minimale per GraphQL string (stile JSON)
-        String esc = s.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "\\r");
-        return "\"" + esc + "\"";
+        return "{ " + trimmed + " }";
     }
 }
